@@ -1,0 +1,5 @@
+---
+kinds:
+  - playbook: molecule/**/(converge|prepare).yml
+  - galaxy: molecule/**/requirements.yml
+  - yaml: molecule/**/*.yml

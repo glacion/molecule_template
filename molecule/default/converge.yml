@@ -1,0 +1,8 @@
+---
+# vi: set ft=yaml.ansible :
+- name: Converge
+  hosts: all
+  tasks:
+    - name: Include role
+      ansible.builtin.include_role:
+        name: glacion.molecule_template

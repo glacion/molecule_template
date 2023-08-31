@@ -1,0 +1,13 @@
+---
+# vi: set ft=yaml.ansible :
+galaxy_info:
+  author: Can Güvendiren <can@glacion.com>
+  description: Template for developing ansible roles with molecule
+  license: BSD-3-Clause
+  min_ansible_version: '2.14'
+  namespace: glacion
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - bullseye
