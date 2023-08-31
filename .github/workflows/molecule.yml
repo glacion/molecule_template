@@ -7,12 +7,16 @@ on:
 name: Molecule
 run-name: Run molecule test
 
+env:
+  PY_COLORS: '1'
+  ANSIBLE_FORCE_COLOR: '1'
+
 jobs:
   Test:
     runs-on: ubuntu-22.04
     steps:
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+      - name: Set up system dependencies
+        run: sudo apt-get install qemu-system qemu-utils mkisofs
 
       - name: Checkout repository
         uses: actions/checkout@v3
