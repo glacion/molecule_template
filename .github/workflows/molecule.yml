@@ -18,7 +18,7 @@ jobs:
       - name: Set up system dependencies
         run: >-
           sudo apt-get install --no-install-recommends
-          qemu-system-aarch64 qemu-system-x86 mkisofs
+          genisoimage qemu-system-aarch64 qemu-system-x86 qemu-utils
 
       - name: Checkout repository
         uses: actions/checkout@v3
