@@ -40,3 +40,13 @@ repos:
     rev: 01e0a4d
     hooks:
       - id: jinjalint
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.10.0
+    hooks:
+      - id: pretty-format-toml
+        args:
+          - --autofix
+      - id: pretty-format-ini
+        args:
+          - --autofix

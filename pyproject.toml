@@ -1,18 +1,18 @@
 [project]
-name = "molecule-template"
-version = "0.0.0"
 dependencies = [
   "ansible-core>=2.15",
   "molecule-qemu@git+https://github.com/glacion/molecule-qemu.git@main",
   "molecule>=6.0",
   "pre-commit>3.3",
-  "pytest-testinfra>=9.0",
+  "pytest-testinfra>=9.0"
 ]
+name = "molecule-template"
+version = "0.0.0"
 
 [tool.setuptools]
 py-modules = []
 
 [tool.yamlfix]
-whitelines = 1
 section_whitelines = 1
 sequence_style = "block_style"
+whitelines = 1
