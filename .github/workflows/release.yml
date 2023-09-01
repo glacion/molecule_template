@@ -1,8 +1,8 @@
 ---
 on:
   push:
-    branches:
-      - main
+    tags:
+      - '*'
 
 name: Molecule
 run-name: Run molecule test
@@ -12,7 +12,7 @@ env:
   ANSIBLE_FORCE_COLOR: '1'
 
 jobs:
-  Test:
+  Prepare:
     runs-on: ubuntu-22.04
     steps:
       - name: Set up system dependencies
@@ -32,5 +32,21 @@ jobs:
       - name: Install dependencies
         run: pip install .
 
+  Test:
+    needs:
+      - Prepare
+    runs-on: ubuntu-22.04
+    steps:
       - name: Execute molecule test
         run: molecule test
+
+  Release:
+    needs:
+      - Test
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Publish to Galaxy
+        run: >-
+          ansible-galaxy role import
+          --api-key ${{ secrets.GALAXY_API_KEY }}
+          glacion molecule_template
