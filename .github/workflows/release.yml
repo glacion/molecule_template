@@ -4,15 +4,15 @@ on:
     tags:
       - '*'
 
-name: Molecule
-run-name: Run molecule test
+name: Release
+run-name: Test and release role
 
 env:
   PY_COLORS: '1'
   ANSIBLE_FORCE_COLOR: '1'
 
 jobs:
-  Prepare:
+  Test:
     runs-on: ubuntu-22.04
     steps:
       - name: Set up system dependencies
@@ -32,11 +32,6 @@ jobs:
       - name: Install dependencies
         run: pip install .
 
-  Test:
-    needs:
-      - Prepare
-    runs-on: ubuntu-22.04
-    steps:
       - name: Execute molecule test
         run: molecule test
 
