@@ -20,7 +20,6 @@ MarkupSafe==2.1.3
 mdurl==0.1.2
 molecule==6.0.2
 molecule-qemu @ git+https://github.com/glacion/molecule-qemu.git@8d71605d643d353d48dd5e0af84b7f22b6510580
-molecule-template @ file:///home/glacion/src/molecule_template
 nodeenv==1.8.0
 packaging==23.1
 platformdirs==3.10.0
