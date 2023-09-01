@@ -1,7 +1,7 @@
 # Molecule Template
 
 A template for using [molecule](https://ansible.readthedocs.io/projects/molecule/)
-to develop ansible roles
+to develop ansible roles. To be an example, this role installs itself.
 
 ## Features
 
@@ -19,9 +19,11 @@ to develop ansible roles
     [flake8](https://flake8.pycqa.org/en/latest) linting,
     [black](https://github.com/psf/black) formatting
 - [molecule-qemu](https://github.com/andreygubarev/molecule-qemu)
-  configured for testing with x86_64 and aarch64 platforms
+  configured for testing with x86_64 and aarch64 platforms.
+  This example uses my [fork](https://github.com/glacion/molecule-qemu) with added features.
+  See these for configuring the VMs for molecule.
 - [pytest-testinfra](https://github.com/pytest-dev/pytest-testinfra)
-  for testing state with python
+  for testing state with python.
 
 ## Requirements
 
