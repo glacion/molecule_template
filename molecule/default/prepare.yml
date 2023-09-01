@@ -1,0 +1,10 @@
+---
+# vi: set ft=yaml.ansible :
+- name: Prepare
+  hosts: all
+  become: true
+  tasks:
+    - name: Update
+      ansible.builtin.apt:
+        update_cache: true
+        upgrade: full

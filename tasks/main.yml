@@ -1,5 +1,47 @@
 ---
 # vi: set ft=yaml.ansible :
-- name: Debug
-  ansible.builtin.debug:
-    msg: Hello World
+- name: Install required packages
+  ansible.builtin.apt:
+    pkg:
+      - genisoimage
+      - git
+      - python3
+      - python3-pip
+      - virtualenv
+      - qemu-system-aarch64
+      - qemu-system-x86
+      - qemu-utils
+
+- name: Retrieve the repository
+  ansible.builtin.git:
+    depth: 1
+    dest: /tmp/molecule_template
+    repo: https://github.com/glacion/molecule_template
+    single_branch: true
+    update: false
+    version: main
+
+- name: Update molecule files for internal test
+  loop:
+    - molecule.yml
+    - converge.yml
+  ansible.builtin.copy:
+    src: '{{ item }}'
+    dest: /tmp/molecule_template/molecule/default/{{ item }}
+    mode: '0644'
+
+- name: Install pip dependencies
+  ansible.builtin.pip:
+    chdir: /tmp/molecule_template
+    name: .
+    virtualenv: /tmp/molecule_template/.venv
+
+- name: Run molecule test
+  changed_when: false
+  register: molecule
+  failed_when: molecule.rc != 0
+  args:
+    chdir: /tmp/molecule_template
+  ansible.builtin.shell: |-
+    . .venv/bin/activate
+    molecule test
