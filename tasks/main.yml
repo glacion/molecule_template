@@ -21,15 +21,6 @@
     update: false
     version: main
 
-- name: Update molecule files for internal test
-  loop:
-    - molecule.yml
-    - converge.yml
-  ansible.builtin.copy:
-    src: '{{ item }}'
-    dest: /tmp/molecule_template/molecule/default/{{ item }}
-    mode: '0644'
-
 - name: Install pip dependencies
   ansible.builtin.pip:
     chdir: /tmp/molecule_template
