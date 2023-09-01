@@ -1,9 +1,0 @@
----
-# vi: set ft=yaml.ansible :
-- name: Converge
-  hosts: all
-  become: true
-  tasks:
-    - name: Debug
-      ansible.builtin.debug:
-        msg: Hello World!

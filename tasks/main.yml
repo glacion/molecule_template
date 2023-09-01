@@ -35,13 +35,3 @@
     chdir: /tmp/molecule_template
     name: .
     virtualenv: /tmp/molecule_template/.venv
-
-- name: Run molecule test
-  changed_when: false
-  register: molecule
-  failed_when: molecule.rc != 0
-  args:
-    chdir: /tmp/molecule_template
-  ansible.builtin.shell: |-
-    . .venv/bin/activate
-    molecule test
