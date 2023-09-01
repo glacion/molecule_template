@@ -33,5 +33,5 @@
 - name: Install pip dependencies
   ansible.builtin.pip:
     chdir: /tmp/molecule_template
-    name: .
-    virtualenv: /tmp/molecule_template/.venv
+    requirements: requirements.txt
+    virtualenv: .venv
