@@ -12,11 +12,11 @@ platforms:
     image_checksum: sha512:https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS
     network_ssh_port: 47001
 
-  # - name: debian-bookworm-aarch64
-  #   image_arch: aarch64
-  #   image_url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-arm64.qcow2
-  #   image_checksum: sha512:https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS
-  #   network_ssh_port: 47002
+  - name: debian-bookworm-aarch64
+    image_arch: aarch64
+    image_url: https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-genericcloud-arm64.qcow2
+    image_checksum: sha512:https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS
+    network_ssh_port: 47002
 
 verifier:
   name: testinfra

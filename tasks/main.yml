@@ -1,16 +1,8 @@
 ---
 # vi: set ft=yaml.ansible :
-- name: Install required packages
+- name: Install git
   ansible.builtin.apt:
-    pkg:
-      - genisoimage
-      - git
-      - python3
-      - python3-pip
-      - virtualenv
-      - qemu-system-aarch64
-      - qemu-system-x86
-      - qemu-utils
+    name: git
 
 - name: Retrieve the repository
   ansible.builtin.git:
@@ -20,9 +12,3 @@
     single_branch: true
     update: false
     version: main
-
-- name: Install pip dependencies
-  ansible.builtin.pip:
-    chdir: /tmp/molecule_template
-    requirements: requirements.txt
-    virtualenv: .venv

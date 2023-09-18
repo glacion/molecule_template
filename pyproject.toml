@@ -1,7 +1,7 @@
 [project]
 dependencies = [
   "ansible-core>=2.15",
-  "molecule-qemu@git+https://github.com/glacion/molecule-qemu.git@main",
+  "molecule-qemu>=0.5",
   "molecule>=6.0",
   "pre-commit>3.3",
   "pytest-testinfra>=9.0"

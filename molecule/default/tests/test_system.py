@@ -2,6 +2,6 @@ from testinfra.modules.file import File
 
 
 def test_molecule_executable(host):
-    it: File = host.file("/tmp/molecule_template/.venv/bin/molecule")
+    it: File = host.file("/tmp/molecule_template/pyproject.toml")
 
-    assert it.is_executable
+    assert it.exists
