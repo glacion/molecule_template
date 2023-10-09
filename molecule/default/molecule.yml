@@ -18,6 +18,18 @@ platforms:
     image_checksum: sha512:https://cloud.debian.org/images/cloud/bookworm/latest/SHA512SUMS
     network_ssh_port: 47002
 
+  # - name: ubuntu-jammy-x86_64
+  #   image_arch: x86_64
+  #   image_url: https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img
+  #   image_checksum: sha256:https://cloud-images.ubuntu.com/jammy/current/SHA256SUMS
+  #   network_ssh_port: 47011
+
+  # - name: ubuntu-jammy-aarch64
+  #   image_arch: aarch64
+  #   image_url: https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-arm64.img
+  #   image_checksum: sha256:https://cloud-images.ubuntu.com/jammy/current/SHA256SUMS
+  #   network_ssh_port: 47012
+
 verifier:
   name: testinfra
   options:
